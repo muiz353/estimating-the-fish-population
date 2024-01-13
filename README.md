@@ -1,11 +1,16 @@
-Estimating the fish population in the five Nordic countries
+# Estimating the fish population in the five Nordic countries
 
-My project is about estimating the fish population in the five Nordic countries (Denmark, Finland, Iceland, Norway, and Sweden) based on the number of fishermen in each country. The project utilizes linear regression methods to find the relationship between the independent variable (number of fishermen) and the dependent variable (fish population). This project can assist researchers, managers, and policymakers in monitoring and protecting fisheries resources in the Nordic region.
+Final project for the Building AI course
+
+## Summary
+
+My project is about estimating the fish population in the five Nordic countries (Denmark, Finland, Iceland, Norway, and Sweden) based on the number of fishermen in each country. The project utilizes linear regression methods to find the relationship between the independent variable (number of fishermen) and the dependent variable (fish population). This project can assist researchers, managers, and policymakers in monitoring and protecting fisheries resources in the Nordic region. 
 
 
+## Background
 The problem addressed by my idea is the lack of accurate and up-to-date data on fish populations in the Nordic region. This issue frequently arises due to the difficulty in directly calculating or measuring fish populations. The problem is significant as fish populations impact ecosystem balance, community well-being, and the national economy. My personal motivation is to learn more about fisheries and the environment, as well as how AI can assist in addressing challenges related to these fields.
 
-
+## How is it used?
 The process of using my solution is as follows:
 
 Firstly, I collect data on the number of fishermen and fish populations in the five Nordic countries from various sources, such as government reports, international organizations, or scientific research.
@@ -16,45 +21,34 @@ Fifthly, I evaluate the performance and accuracy of my model using metrics such 
 Sixthly, I present my results and findings in the form of tables, graphs, or reports.
 
 The situations where my solution is needed are when there is a requirement to know or predict fish populations in the Nordic region, whether for research, management, or policy purposes. Users of my solution are researchers, managers, or policymakers interested in fisheries and the environment. Considerations include the availability and quality of data, the validity and reliability of the model, as well as the ethics and social impact of my solution.
-This is how you create code examples:
+Images will make your README look nice!
+Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
+![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
 
+def main():
+   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
+   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
+   fishers = [1891, 2652, 3800, 11611, 1757]
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+   totPop = sum(pop)
+   totFish = sum(fishers)
 
+   # write your solution here
 
-df = pd.read_csv("fish_data.csv")
-X = df["fishers"].values.reshape(-1,1) # predictor variable
-y = df["fish"].values.reshape(-1,1) # response variable
+   for i in range(len(countries)):
+      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
 
+main()
 
-model = LinearRegression()
-model.fit(X, y)
+## Data sources and AI methods
+[Twitter API](https://developer.twitter.com/en/docs)
 
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
 
-y_pred = model.predict(X)
-
-
-r2 = r2_score(y, y_pred)
-mae = mean_absolute_error(y, y_pred)
-mse = mean_squared_error(y, y_pred)
-rmse = np.sqrt(mse)
-print(f"R-squared: {r2:.2f}")
-print(f"Mean Absolute Error: {mae:.2f}")
-print(f"Mean Squared Error: {mse:.2f}")
-print(f"Root Mean Squared Error: {rmse:.2f}")
-
-
-plt.scatter(X, y, color="blue", label="Actual Data")
-plt.plot(X, y_pred, color="red", label="Regression Line")
-plt.xlabel("Number of Fishers")
-plt.ylabel("Fish Population")
-plt.legend()
-plt.show()
-
+## Challenges
 
 My project does not address several issues, such as:
 The presence of other factors influencing fish populations besides the number of fishermen, such as environmental conditions, climate change, migration patterns, or natural predators.
